@@ -52,10 +52,6 @@ application {
     mainClass.set("com.opentext.axcelerate.adpkt.AppKt")
 }
 
-// tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-//   kotlinOptions.jvmTarget = "11"
-// }
-
 tasks {
     shadowJar {
         manifest {
