@@ -9,4 +9,3 @@
 
 rootProject.name = "adpkt"
 include("app")
-include("gv")
