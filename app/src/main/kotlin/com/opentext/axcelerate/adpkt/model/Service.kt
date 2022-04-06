@@ -3,6 +3,7 @@ package com.opentext.axcelerate.adpkt.model
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.opentext.axcelerate.adpkt.client.Client
 import com.opentext.axcelerate.adpkt.task.ListEntitiesRequest
+import com.opentext.axcelerate.adpkt.task.QueryEngineRequest
 import com.opentext.axcelerate.adpkt.task.TaxonomyStatisticRequest
 
 class Service() {
@@ -34,6 +35,14 @@ class Service() {
                 root.get("adp_taxonomy_statistics_json_output").asText()
             )
                 .toPrettyString()
+        }
+
+        fun queryEngine(req: QueryEngineRequest): String {
+            val mapper = jacksonObjectMapper()
+            val meta = client.run(mapper.writeValueAsString(req))
+
+            val root = mapper.readTree(meta)
+            return root.toPrettyString()
         }
     }
 }

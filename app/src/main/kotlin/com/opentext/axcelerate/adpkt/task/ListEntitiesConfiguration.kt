@@ -26,5 +26,8 @@ data class ListEntitiesConfiguration(
     val adpListEntitiesRelatedEntityType: String? = null,
 
     @JsonProperty("adp_listEntities_type")
-    val adpListEntitiesType: String? = null
+    val adpListEntitiesType: String? = null,
+
+    @JsonProperty("adp_loggingEnabled")
+    val adpLoggingEnabled: String? = null
 )
