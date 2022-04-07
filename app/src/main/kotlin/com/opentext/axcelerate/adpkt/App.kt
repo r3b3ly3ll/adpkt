@@ -6,11 +6,13 @@ package com.opentext.axcelerate.adpkt
 import com.github.ajalt.clikt.core.subcommands
 import com.opentext.axcelerate.adpkt.command.RootCmd
 import com.opentext.axcelerate.adpkt.command.ListEntitiesCmd
+import com.opentext.axcelerate.adpkt.command.QueryEngineCmd
 import com.opentext.axcelerate.adpkt.command.TaxonomyStatisticCmd
 
 fun main(args: Array<String>) = RootCmd()
     .subcommands(
         ListEntitiesCmd(),
+        QueryEngineCmd(),
         TaxonomyStatisticCmd()
     )
     .main(args)

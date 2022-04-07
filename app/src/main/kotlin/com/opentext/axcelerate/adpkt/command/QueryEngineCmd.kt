@@ -6,8 +6,8 @@ import com.opentext.axcelerate.adpkt.model.Service
 import com.opentext.axcelerate.adpkt.task.QueryEngineConfiguration
 import com.opentext.axcelerate.adpkt.task.QueryEngineRequest
 
-class QueryEngineCmd: CliktCommand() {
-    private val engineTaxonomies : String? by option("--engineTaxonomies", help = "engine taxonomies")
+class QueryEngineCmd: CliktCommand(name = "queryEngine") {
+    // private val engineTaxonomies : String? by option("--engineTaxonomies", help = "engine taxonomies")
     private val applicationIdentifier: String? by option("--applicationIdentifier", help = "application identifier")
     private val engineName: String? by option("--engineName", help = "engine identifier")
     private val engineQuery: String? by option("--engineQuery", help = "engine query")
@@ -17,10 +17,9 @@ class QueryEngineCmd: CliktCommand() {
     override fun run() {
 
         val req = QueryEngineRequest(
-            taskDisplayName = "Taxonomy Statistic (cli)",
-            taskDescription = "Taxonomy Statistic (cli)",
+            taskDisplayName = "Query Engine (cli)",
+            taskDescription = "Query Engine (cli)",
             taskConfiguration = QueryEngineConfiguration(
-                adpQueryEngineEngineTaxonomies = null,
                 adpQueryEngineApplicationIdentifier = applicationIdentifier,
                 adpQueryEngineEngineName = engineName,
                 adpQueryEngineEngineQuery = engineQuery,

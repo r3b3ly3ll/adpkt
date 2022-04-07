@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class QueryEngineRequest (
     val taskType: String = "Query Engine",
-    val taskConfiguration: QueryEngineConfiguration,
     val taskDescription: String = "Query Engine (description)",
-    val taskDisplayName: String = "Query Engine (displayName)"
+    val taskDisplayName: String = "Query Engine (displayName)",
+    val taskConfiguration: QueryEngineConfiguration
 )

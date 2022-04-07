@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="add queryEngine">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="query engine working now">
+      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequestTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/QueryEngineCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/QueryEngineCmd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,31 +37,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="adpkt" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="adpkt" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="adpkt" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="adpkt" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="adpkt" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="shadow" type="c8890929:TasksNode$1" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -71,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -107,13 +85,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../adp-lib" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33333334" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.opentext.axcelerate.adpkt.task" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.adpkt:app [shadowJar]">
-    <configuration name="ListEntitiesRequestTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ListEntitiesCmdRequestTest.testListEntitiesRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +114,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.task.ListEntitiesRequestTest&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adpkt.task.ListEntitiesCmdRequestTest.testListEntitiesRequest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,23 +147,48 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="adpkt:app [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="QueryEngineRequestTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--scan --stacktrace" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;com.opentext.axcelerate.adpkt.task.QueryEngineRequestTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="QueryEngineRequestTest.testQueryEngineRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;com.opentext.axcelerate.adpkt.task.QueryEngineRequestTest.testQueryEngineRequest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -201,20 +214,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.opentext.axcelerate.adpkt.AppKt" />
-      <module name="adpkt.app.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.adpkt:app [shadowJar]" />
+        <item itemvalue="Gradle.QueryEngineRequestTest.testQueryEngineRequest" />
+        <item itemvalue="Gradle.QueryEngineRequestTest" />
+        <item itemvalue="Gradle.ListEntitiesCmdRequestTest.testListEntitiesRequest" />
         <item itemvalue="Gradle.ListEntitiesRequestTest.testListEntitiesRequest" />
-        <item itemvalue="Gradle.adpkt:app [run]" />
-        <item itemvalue="Gradle.ListEntitiesRequestTest" />
-        <item itemvalue="Kotlin.AppKt" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649224765161</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="clean up groovy library.">
+      <created>1649225082918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649225082918</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,6 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="clean up" />
     <MESSAGE value="add queryEngine" />
-    <option name="LAST_COMMIT_MESSAGE" value="add queryEngine" />
+    <MESSAGE value="clean up groovy library." />
+    <MESSAGE value="query engine working now" />
+    <option name="LAST_COMMIT_MESSAGE" value="query engine working now" />
   </component>
 </project>
