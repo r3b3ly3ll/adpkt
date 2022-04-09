@@ -9,8 +9,8 @@ import com.opentext.axcelerate.adp.kotlin.task.QueryEngineRequest
 
 class QueryEngineCmd: CliktCommand(name = "queryEngine") {
     private val engineTaxonomies : String? by option("--engineTaxonomies", help = "engine taxonomies")
-    private val applicationIdentifier: String? by option("--applicationIdentifier", help = "application identifier")
-    private val engineName: String? by option("--engineName", help = "engine identifier")
+    private val application: String? by option("--application", help = "application identifier")
+    private val engine: String? by option("--engine", help = "engine identifier")
     private val engineQuery: String? by option("--engineQuery", help = "engine query")
     private val engineUserName: String? by option("--engineUserName", help = "engine user name")
     private val engineUserPassword: String? by option("--engineUserPassword", help = "engine user password")
@@ -33,8 +33,8 @@ class QueryEngineCmd: CliktCommand(name = "queryEngine") {
             taskDescription = "Query Engine (cli)",
             taskConfiguration = QueryEngineConfiguration(
                 adpQueryEngineEngineTaxonomies = taxonomies,
-                adpQueryEngineApplicationIdentifier = applicationIdentifier,
-                adpQueryEngineEngineName = engineName,
+                adpQueryEngineApplicationIdentifier = application,
+                adpQueryEngineEngineName = engine,
                 adpQueryEngineEngineQuery = engineQuery,
                 adpQueryEngineEngineUserName = engineUserName,
                 adpQueryEngineEngineUserPassword = engineUserPassword,
