@@ -4,12 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="query engine working now">
-      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequestTest.kt" afterDir="false" />
+    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="refactor folder structure">
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/EngineTaxonomy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/args/EngineTaxonomyTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequestTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/QueryEngineCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/QueryEngineCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/args/EngineTaxonomy.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/args/OutputTaxonomy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/OutputTaxonomy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/client/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/client/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/client/CustomX509TrustManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/client/CustomX509TrustManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/ListEntitiesCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/ListEntitiesCmd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/QueryEngineCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryEngineCmd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/RootCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/RootCmd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/command/TaxonomyStatisticCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/TaxonomyStatisticCmd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/model/Axcelerate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Axcelerate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/model/Base.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Base.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/model/DocumentHold.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DocumentHold.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/model/Service.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Service.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/ListEntitiesConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/ListEntitiesRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/TaskResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaskResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/TaxonomyStatisticConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaxonomyStatisticConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adpkt/task/TaxonomyStatisticRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaxonomyStatisticRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adpkt/task/ListEntitiesCmdRequestTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesCmdRequestTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adpkt/task/QueryEngineRequestTest.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +58,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="adpkt" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="adpkt" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="adpkt" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="shadow" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -88,20 +121,22 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33333334" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.opentext.axcelerate.adpkt.args" />
       <recent name="com.opentext.axcelerate.adpkt.task" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.adpkt:app [shadowJar]">
-    <configuration name="ListEntitiesCmdRequestTest.testListEntitiesRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.adpkt [shadowJar]">
+    <configuration name="EngineTaxonomyTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,30 +149,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.task.ListEntitiesCmdRequestTest.testListEntitiesRequest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ListEntitiesRequestTest.testListEntitiesRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.task.ListEntitiesRequestTest.testListEntitiesRequest&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adpkt.args.EngineTaxonomyTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,7 +182,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="QueryEngineRequestTest.testQueryEngineRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="QueryEngineRequestTest.testQueryEngineRequestWithEngineTaxonomies" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -183,7 +195,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.task.QueryEngineRequestTest.testQueryEngineRequest&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adpkt.task.QueryEngineRequestTest.testQueryEngineRequestWithEngineTaxonomies&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,10 +205,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="adpkt:app [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests in 'com.opentext.axcelerate.adpkt'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;com.opentext.axcelerate.adpkt.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="adpkt [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -216,11 +251,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.adpkt:app [shadowJar]" />
-        <item itemvalue="Gradle.QueryEngineRequestTest.testQueryEngineRequest" />
+        <item itemvalue="Gradle.adpkt [shadowJar]" />
+        <item itemvalue="Gradle.Tests in 'com.opentext.axcelerate.adpkt'" />
+        <item itemvalue="Gradle.EngineTaxonomyTest" />
         <item itemvalue="Gradle.QueryEngineRequestTest" />
-        <item itemvalue="Gradle.ListEntitiesCmdRequestTest.testListEntitiesRequest" />
-        <item itemvalue="Gradle.ListEntitiesRequestTest.testListEntitiesRequest" />
+        <item itemvalue="Gradle.QueryEngineRequestTest.testQueryEngineRequestWithEngineTaxonomies" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649225082918</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="query engine working now">
+      <created>1649307263823</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649307263823</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,6 +315,7 @@
     <MESSAGE value="add queryEngine" />
     <MESSAGE value="clean up groovy library." />
     <MESSAGE value="query engine working now" />
-    <option name="LAST_COMMIT_MESSAGE" value="query engine working now" />
+    <MESSAGE value="refactor folder structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor folder structure" />
   </component>
 </project>

@@ -47,13 +47,13 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.opentext.axcelerate.adpkt.AppKt")
+    mainClass.set("com.opentext.axcelerate.adp.kotlin.AppKt")
 }
 
 tasks {
     shadowJar {
         manifest {
-            attributes(Pair("Main-Class", "com.opentext.axcelerate.adpkt.Appkt"))
+            attributes(Pair("Main-Class", "com.opentext.axcelerate.adp.kotlin.Appkt"))
         }
     }
 }
