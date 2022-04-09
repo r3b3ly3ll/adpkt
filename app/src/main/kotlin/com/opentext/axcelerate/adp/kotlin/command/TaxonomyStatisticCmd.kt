@@ -3,6 +3,7 @@ package com.opentext.axcelerate.adp.kotlin.command
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.args.EngineTaxonomy
+import com.opentext.axcelerate.adp.kotlin.args.OutputTaxonomy
 import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticRequest
@@ -17,15 +18,21 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
     private val engineUserPassword: String? by option("--engineUserPassword", help = "engine user password")
 
     override fun run() {
-        val taxonomies: ArrayList<EngineTaxonomy> = ArrayList(0)
-
+        val arrayOfEngineTaxonomies: ArrayList<EngineTaxonomy> = ArrayList(0)
         if (engineTaxonomies?.isNotEmpty() == true) {
             for (taxonomy in engineTaxonomies!!.split(",")) {
                 try {
-                    taxonomies += EngineTaxonomy(taxonomy)
+                    arrayOfEngineTaxonomies += EngineTaxonomy(taxonomy)
                 } catch (e: Exception) {
                     continue
                 }
+            }
+        }
+
+        val arrayOfOutputTaxonomies: ArrayList<OutputTaxonomy> = ArrayList(0)
+        if (outputTaxonomies?.isNotEmpty() == true) {
+            for (taxonomy in outputTaxonomies!!.split(",")) {
+                arrayOfOutputTaxonomies += OutputTaxonomy(taxonomy)
             }
         }
 
@@ -33,7 +40,8 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
             taskDisplayName = "Taxonomy Statistic (cli)",
             taskDescription = "Taxonomy Statistic (cli)",
             taskConfiguration = TaxonomyStatisticConfiguration(
-                adpTaxonomyStatisticEngineTaxonomies = taxonomies,
+                adpTaxonomyStatisticEngineTaxonomies = arrayOfEngineTaxonomies,
+                adpTaxonomyStatisticOutputTaxonomies = arrayOfOutputTaxonomies,
                 adpTaxonomyStatisticApplicationIdentifier = application,
                 adpTaxonomyStatisticEngineName = engine,
                 adpTaxonomyStatisticEngineQuery = engineQuery,
