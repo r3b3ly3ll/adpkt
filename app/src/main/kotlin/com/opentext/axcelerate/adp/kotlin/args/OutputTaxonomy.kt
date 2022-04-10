@@ -2,11 +2,24 @@ package com.opentext.axcelerate.adp.kotlin.args
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class OutputTaxonomy (
+class OutputTaxonomy(outputTaxonomy: String) {
     @JsonProperty("Taxonomy")
-    val taxonomy: String,
+    var taxonomy: String
     @JsonProperty("Mode")
-    val mode: String = "Category counts",
+    var mode: String = "Category counts"
     @JsonProperty("Maximum number of categories")
-    val maximumNumberOfCategories: Int = 1000
-)
+    var maximumNumberOfCategories: Int = 1000
+
+    init {
+        val items = outputTaxonomy.split("|")
+        when (items.size) {
+            1 -> taxonomy = items[0]
+            3 -> {
+                taxonomy = items[0]
+                mode = items[1]
+                maximumNumberOfCategories = items[2].toInt()
+            }
+            else -> throw Exception("not able to split $outputTaxonomy properly")
+        }
+    }
+}

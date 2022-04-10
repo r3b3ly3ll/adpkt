@@ -7,8 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="added create custodian">
+    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="cleaned up taxonomystatistic command">
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/Util.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/args/UtilTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/OutputTaxonomy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/OutputTaxonomy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryEngineCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryEngineCmd.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/TaxonomyStatisticCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/TaxonomyStatisticCmd.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -110,12 +114,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.opentext.axcelerate.adp.kotlin.args" />
       <recent name="com.opentext.axcelerate.adpkt.args" />
       <recent name="com.opentext.axcelerate.adpkt.task" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.adpkt [shadowJar]">
-    <configuration name="EngineTaxonomyTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.UtilTest.testOutputTaxonomiesWithNull">
+    <configuration name="UtilTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -128,7 +133,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.args.EngineTaxonomyTest&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adp.kotlin.args.UtilTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -138,7 +143,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="QueryEngineRequestTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UtilTest.testEngineTaxonomies" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -151,7 +156,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.task.QueryEngineRequestTest&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adp.kotlin.args.UtilTest.testEngineTaxonomies&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,7 +166,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="QueryEngineRequestTest.testQueryEngineRequestWithEngineTaxonomies" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UtilTest.testEngineTaxonomiesWithNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +179,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.task.QueryEngineRequestTest.testQueryEngineRequestWithEngineTaxonomies&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adp.kotlin.args.UtilTest.testEngineTaxonomiesWithNull&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -184,7 +189,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'com.opentext.axcelerate.adpkt'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UtilTest.testOutputTaxonomies" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -197,7 +202,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;com.opentext.axcelerate.adpkt.*&quot;" />
+            <option value="&quot;com.opentext.axcelerate.adp.kotlin.args.UtilTest.testOutputTaxonomies&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -207,34 +212,36 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="adpkt [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UtilTest.testOutputTaxonomiesWithNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="shadowJar" />
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;com.opentext.axcelerate.adp.kotlin.args.UtilTest.testOutputTaxonomiesWithNull&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.adpkt [shadowJar]" />
-        <item itemvalue="Gradle.Tests in 'com.opentext.axcelerate.adpkt'" />
-        <item itemvalue="Gradle.EngineTaxonomyTest" />
-        <item itemvalue="Gradle.QueryEngineRequestTest" />
-        <item itemvalue="Gradle.QueryEngineRequestTest.testQueryEngineRequestWithEngineTaxonomies" />
+        <item itemvalue="Gradle.UtilTest.testOutputTaxonomiesWithNull" />
+        <item itemvalue="Gradle.UtilTest.testOutputTaxonomies" />
+        <item itemvalue="Gradle.UtilTest" />
+        <item itemvalue="Gradle.UtilTest.testEngineTaxonomies" />
+        <item itemvalue="Gradle.UtilTest.testEngineTaxonomiesWithNull" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649543967243</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cleaned up taxonomystatistic command">
+      <created>1649545291023</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649545291023</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,6 +324,7 @@
     <MESSAGE value="query engine working now" />
     <MESSAGE value="refactor folder structure" />
     <MESSAGE value="added create custodian" />
-    <option name="LAST_COMMIT_MESSAGE" value="added create custodian" />
+    <MESSAGE value="cleaned up taxonomystatistic command" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up taxonomystatistic command" />
   </component>
 </project>

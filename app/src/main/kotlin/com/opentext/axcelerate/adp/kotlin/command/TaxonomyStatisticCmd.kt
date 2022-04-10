@@ -2,8 +2,7 @@ package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.option
-import com.opentext.axcelerate.adp.kotlin.args.EngineTaxonomy
-import com.opentext.axcelerate.adp.kotlin.args.OutputTaxonomy
+import com.opentext.axcelerate.adp.kotlin.args.Util
 import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticRequest
@@ -18,23 +17,8 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
     private val engineUserPassword: String? by option("--engineUserPassword", help = "engine user password")
 
     override fun run() {
-        val arrayOfEngineTaxonomies: ArrayList<EngineTaxonomy> = ArrayList(0)
-        if (engineTaxonomies?.isNotEmpty() == true) {
-            for (taxonomy in engineTaxonomies!!.split(",")) {
-                try {
-                    arrayOfEngineTaxonomies += EngineTaxonomy(taxonomy)
-                } catch (e: Exception) {
-                    continue
-                }
-            }
-        }
-
-        val arrayOfOutputTaxonomies: ArrayList<OutputTaxonomy> = ArrayList(0)
-        if (outputTaxonomies?.isNotEmpty() == true) {
-            for (taxonomy in outputTaxonomies!!.split(",")) {
-                arrayOfOutputTaxonomies += OutputTaxonomy(taxonomy)
-            }
-        }
+        val arrayOfEngineTaxonomies = Util.stringToEngineTaxonomies(engineTaxonomies)
+        val arrayOfOutputTaxonomies = Util.stringToOutputTaxonomies(outputTaxonomies)
 
         val req = TaxonomyStatisticRequest(
             taskDisplayName = "Taxonomy Statistic (cli)",
