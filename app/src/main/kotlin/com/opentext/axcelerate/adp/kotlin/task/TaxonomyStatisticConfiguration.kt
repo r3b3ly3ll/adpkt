@@ -43,25 +43,18 @@ import com.opentext.axcelerate.adp.kotlin.args.OutputTaxonomy
 data class TaxonomyStatisticConfiguration (
     @JsonProperty("adp_taxonomyStatistic_engineTaxonomies")
     val adpTaxonomyStatisticEngineTaxonomies: ArrayList<EngineTaxonomy>? = null,
-
     @JsonProperty("adp_taxonomyStatistic_outputTaxonomies")
     val adpTaxonomyStatisticOutputTaxonomies: ArrayList<OutputTaxonomy>? = null,
-
     @JsonProperty("adp_taxonomyStatistic_applicationIdentifier")
     val adpTaxonomyStatisticApplicationIdentifier: String? = null,
-
     @JsonProperty("adp_taxonomyStatistic_engineName")
     val adpTaxonomyStatisticEngineName: String? = null,
-
     @JsonProperty("adp_taxonomyStatistic_engineQuery")
     val adpTaxonomyStatisticEngineQuery: String? = null,
-
     @JsonProperty("adp_taxonomyStatistic_engineUserName")
     val adpTaxonomyStatisticEngineUserName: String? = null,
-
     @JsonProperty("adp_taxonomyStatistic_engineUserPassword")
     val adpTaxonomyStatisticEngineUserPassword: String? = null,
-
     @JsonProperty("adp_loggingEnabled")
-    val adpLoggingEnabled: String? = null
+    val adpLoggingEnabled: Boolean = false
 )

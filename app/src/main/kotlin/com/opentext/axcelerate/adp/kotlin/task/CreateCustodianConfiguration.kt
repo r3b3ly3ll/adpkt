@@ -1,4 +1,7 @@
 package com.opentext.axcelerate.adp.kotlin.task
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.annotation.JsonProperty
 import com.opentext.axcelerate.adp.kotlin.args.Custodian
 
 /*
@@ -22,9 +25,17 @@ import com.opentext.axcelerate.adp.kotlin.args.Custodian
 }
 */
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 data class CreateCustodianConfiguration (
-    val adp_createCustodian_custodians: ArrayList<Custodian>? = null,
-    val adp_createCustodian_applicationIdentifier: String? = null,
-    val adp_createCustodian_engineIdentifier: String?  = null,
-    val adp_createCustodian_updateExistingCustodians: Boolean = true
+    @JsonProperty("adp_createCustodian_custodians")
+    val adpCreateCustodianCustodians: ArrayList<Custodian>? = null,
+    @JsonProperty("adp_createCustodian_applicationIdentifier")
+    val adpCreateCustodianApplicationIdentifier: String? = null,
+    @JsonProperty("adp_createCustodian_engineIdentifier")
+    val adpCreateCustodianEngineIdentifier: String?  = null,
+    @JsonProperty("adp_createCustodian_updateExistingCustodians")
+    val adpCreateCustodianUpdateExistingCustodians: Boolean = true,
+    @JsonProperty("adp_loggingEnabled")
+    val adpLoggingEnabled: Boolean = false
 )

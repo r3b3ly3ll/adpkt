@@ -50,22 +50,16 @@ import com.opentext.axcelerate.adp.kotlin.args.EngineTaxonomy
 data class QueryEngineConfiguration (
     @JsonProperty("adp_queryEngine_engineTaxonomies")
     val adpQueryEngineEngineTaxonomies: ArrayList<EngineTaxonomy>? = null,
-
     @JsonProperty("adp_queryEngine_applicationIdentifier")
     val adpQueryEngineApplicationIdentifier: String? = null,
-
     @JsonProperty("adp_queryEngine_engineName")
     val adpQueryEngineEngineName: String? = null,
-
     @JsonProperty("adp_queryEngine_engineQuery")
     val adpQueryEngineEngineQuery: String? = null,
-
     @JsonProperty("adp_queryEngine_engineUserName")
     val adpQueryEngineEngineUserName: String? = null,
-
     @JsonProperty("adp_queryEngine_engineUserPassword")
     val adpQueryEngineEngineUserPassword: String? = null,
-
     @JsonProperty("adp_loggingEnabled")
-    val adpLoggingEnabled: String? = null
+    val adpLoggingEnabled: Boolean = false
 )

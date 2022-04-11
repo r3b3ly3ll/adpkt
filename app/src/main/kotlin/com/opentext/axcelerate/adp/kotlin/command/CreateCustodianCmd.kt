@@ -17,9 +17,9 @@ class CreateCustodianCmd: CliktCommand(name = "createCustodian"){
             taskDisplayName = "Create Custodian (cli)",
             taskDescription = "Create Custodian (cli)",
             taskConfiguration = CreateCustodianConfiguration(
-                adp_createCustodian_applicationIdentifier = application,
-                adp_createCustodian_engineIdentifier = engine,
-                adp_createCustodian_updateExistingCustodians = update
+                adpCreateCustodianApplicationIdentifier = application,
+                adpCreateCustodianEngineIdentifier = engine,
+                adpCreateCustodianUpdateExistingCustodians = update
             )
         )
 

@@ -9,6 +9,7 @@ import com.opentext.axcelerate.adp.kotlin.command.*
 fun main(args: Array<String>) = RootCmd()
     .subcommands(
         CreateCustodianCmd(),
+        CreateDataSourceCmd(),
         ListEntitiesCmd(),
         QueryEngineCmd(),
         TaxonomyStatisticCmd()

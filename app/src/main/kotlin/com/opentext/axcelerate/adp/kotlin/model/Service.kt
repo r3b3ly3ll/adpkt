@@ -2,10 +2,7 @@ package com.opentext.axcelerate.adp.kotlin.model
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.opentext.axcelerate.adp.kotlin.client.Client
-import com.opentext.axcelerate.adp.kotlin.task.CreateCustodianRequest
-import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
-import com.opentext.axcelerate.adp.kotlin.task.QueryEngineRequest
-import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticRequest
+import com.opentext.axcelerate.adp.kotlin.task.*
 
 class Service {
     companion object {
@@ -52,6 +49,15 @@ class Service {
 
         @JvmStatic
         fun createCustodian(req: CreateCustodianRequest): String {
+            val mapper = jacksonObjectMapper()
+            val meta = client.run(mapper.writeValueAsString(req))
+
+            val root = mapper.readTree(meta)
+            return root.toPrettyString()
+        }
+
+        @JvmStatic
+        fun createDataSource(req: CreateDataSourceRequest): String {
             val mapper = jacksonObjectMapper()
             val meta = client.run(mapper.writeValueAsString(req))
 
