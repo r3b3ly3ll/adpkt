@@ -12,7 +12,7 @@ class Service {
 
         private fun execute(req: TaskRequest): JsonNode {
             val mapper = jacksonObjectMapper()
-            val meta = client.run(mapper.writeValueAsString(req))
+            val meta = client.run(req.toJson())
             return mapper.readTree(meta)
         }
 
@@ -53,6 +53,12 @@ class Service {
 
         @JvmStatic
         fun createDataSource(req: CreateDataSourceRequest): String {
+            val root = execute(req)
+            return root.toPrettyString()
+        }
+
+        @JvmStatic
+        fun queryPostgresqlDB(req: QueryPostgresqlDBRequest): String {
             val root = execute(req)
             return root.toPrettyString()
         }

@@ -46,6 +46,8 @@ data class QueryPostgresqlDBConfiguration(
     val adpQpgdbDbConnectionUrl: String,
     @JsonProperty("adp_qpgdb_sqlQuery")
     val adpQpgdbSqlQuery: String,
+    @JsonProperty("adp_qpgdb_jsonResultSizeLimitMB")
+    val adpQpgdbJsonResultSizeLimitMB: Int = 2,
     @JsonProperty("adp_loggingEnabled")
     val adpLoggingEnabled: Boolean = false
 )
