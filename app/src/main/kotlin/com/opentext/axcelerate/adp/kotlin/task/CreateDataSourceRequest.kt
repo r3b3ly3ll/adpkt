@@ -10,4 +10,4 @@ data class CreateDataSourceRequest (
     val taskDescription: String = "Create Data Source (description)",
     val taskDisplayName: String = "Create Data Source (displayName)",
     val taskConfiguration: CreateDataSourceConfiguration
-)
+): TaskRequest

@@ -9,7 +9,6 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
 import javax.net.ssl.SSLContext
-import javax.net.ssl.HostnameVerifier
 
 class Client(private val endpoint: String, private val user: String, private val password: String ) {
     private var okHttpClient: OkHttpClient

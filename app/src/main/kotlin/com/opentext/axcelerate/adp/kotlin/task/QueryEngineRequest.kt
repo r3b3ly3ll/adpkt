@@ -10,4 +10,4 @@ data class QueryEngineRequest (
     val taskDescription: String = "Query Engine (description)",
     val taskDisplayName: String = "Query Engine (displayName)",
     val taskConfiguration: QueryEngineConfiguration
-)
+): TaskRequest

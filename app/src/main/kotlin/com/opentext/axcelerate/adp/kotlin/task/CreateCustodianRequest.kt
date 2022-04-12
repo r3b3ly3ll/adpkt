@@ -10,4 +10,4 @@ data class CreateCustodianRequest (
     val taskDescription: String = "Create Custodian (description)",
     val taskDisplayName: String = "Create Custodian (displayName)",
     val taskConfiguration: CreateCustodianConfiguration
-)
+): TaskRequest

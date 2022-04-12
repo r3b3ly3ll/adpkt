@@ -10,4 +10,4 @@ data class ListEntitiesRequest(
     val taskDescription: String = "List Entities (description)",
     val taskDisplayName: String = "List Entities (displayName)",
     val taskConfiguration: ListEntitiesConfiguration
-)
+): TaskRequest

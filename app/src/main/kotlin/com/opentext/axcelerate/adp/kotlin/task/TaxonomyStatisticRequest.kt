@@ -10,4 +10,4 @@ data class TaxonomyStatisticRequest (
     val taskDescription: String = "Taxonomy Statistic (description)",
     val taskDisplayName: String = "Taxonomy Statistic (displayName)",
     val taskConfiguration: TaxonomyStatisticConfiguration
-)
+): TaskRequest
