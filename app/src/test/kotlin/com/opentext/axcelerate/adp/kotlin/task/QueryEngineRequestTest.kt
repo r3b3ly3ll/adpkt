@@ -1,6 +1,5 @@
 package com.opentext.axcelerate.adp.kotlin.task
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.opentext.axcelerate.adp.kotlin.args.EngineTaxonomy
 import com.opentext.axcelerate.adp.kotlin.args.Util
 import org.junit.Test
@@ -22,7 +21,7 @@ class QueryEngineRequestTest {
         )
 
         val expected = """{"taskType":"Query Engine","taskDescription":"Query Engine","taskDisplayName":"Query Engine","taskConfiguration":{"adp_queryEngine_engineTaxonomies":[],"adp_queryEngine_engineName":"singleMindServer.G0001","adp_loggingEnabled":false}}"""
-        assertEquals(expected, jacksonObjectMapper().writeValueAsString(req))
+        assertEquals(expected, req.toJson())
     }
 
     @Test
@@ -40,6 +39,6 @@ class QueryEngineRequestTest {
         )
 
         val expected = """{"taskType":"Query Engine","taskDescription":"Query Engine","taskDisplayName":"Query Engine","taskConfiguration":{"adp_queryEngine_engineTaxonomies":[{"Taxonomy":"rm_custodian","Negation":true,"Query":"John Doe"},{"Taxonomy":"rm_copy","Negation":false,"Query":"Native"}],"adp_queryEngine_engineName":"singleMindServer.G0001","adp_loggingEnabled":false}}"""
-        assertEquals(expected, jacksonObjectMapper().writeValueAsString(req))
+        assertEquals(expected, req.toJson())
     }
 }

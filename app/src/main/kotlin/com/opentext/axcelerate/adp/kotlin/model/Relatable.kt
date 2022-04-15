@@ -3,9 +3,10 @@ package com.opentext.axcelerate.adp.kotlin.model
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
 
-open class Base(val id: String) {
+interface Relatable {
+    val id: String
 
-    open fun getEcaApplications(): String {
+    fun getEcaApplications(): String {
         val req = ListEntitiesRequest(
             taskDisplayName = "List Entities",
             taskDescription = "List Entities",
@@ -17,7 +18,7 @@ open class Base(val id: String) {
         return Service.listEntities(req)
     }
 
-    open fun getRnaApplications(): String {
+    fun getRnaApplications(): String {
         val req = ListEntitiesRequest(
             taskDisplayName = "List Entities",
             taskDescription = "List Entities",
@@ -29,7 +30,7 @@ open class Base(val id: String) {
         return Service.listEntities(req)
     }
 
-    open fun getSingleMindServers(): String {
+    fun getSingleMindServers(): String {
         val req = ListEntitiesRequest(
             taskDisplayName = "List Entities",
             taskDescription = "List Entities",
@@ -41,7 +42,7 @@ open class Base(val id: String) {
         return Service.listEntities(req)
     }
 
-    open fun getDataSources(): String {
+    fun getDataSources(): String {
         val req = ListEntitiesRequest(
             taskDisplayName = "List Entities",
             taskDescription = "List Entities",

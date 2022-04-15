@@ -4,7 +4,6 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 
 interface TaskRequest {
     fun toJson(): String {
-        val mapper = jacksonObjectMapper()
-        return mapper.writeValueAsString(this)
+        return jacksonObjectMapper().writeValueAsString(this)
     }
 }

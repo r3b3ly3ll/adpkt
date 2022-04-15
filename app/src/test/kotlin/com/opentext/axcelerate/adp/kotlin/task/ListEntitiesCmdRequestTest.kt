@@ -1,8 +1,6 @@
 package com.opentext.axcelerate.adp.kotlin.task
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.junit.Test
-
 import kotlin.test.assertEquals
 
 class ListEntitiesCmdRequestTest {
@@ -20,7 +18,7 @@ class ListEntitiesCmdRequestTest {
         )
 
         val expected = """{"taskType":"List Entities","taskDescription":"List Datasource","taskDisplayName":"List Datasource","taskConfiguration":{"adp_listEntities_whiteList":"id,displayName,processStatus,hostName","adp_listEntities_relatedEntity":"singleMindServer.G0001","adp_listEntities_type":"dataSource"}}"""
-        assertEquals(expected, jacksonObjectMapper().writeValueAsString(req))
+        assertEquals(expected, req.toJson())
     }
 
 }

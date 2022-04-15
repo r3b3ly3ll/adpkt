@@ -3,8 +3,7 @@ package com.opentext.axcelerate.adp.kotlin.model
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
 
-class DocumentHold(id: String) : Base(id){
-
+class DocumentHold(override val id: String) : Relatable {
     override fun getRnaApplications(): String {
         throw Exception("method: getRnaApplication not applicable")
     }
