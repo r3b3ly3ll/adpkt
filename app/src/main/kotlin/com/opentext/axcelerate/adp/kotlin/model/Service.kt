@@ -17,8 +17,8 @@ class Service {
         }
 
         @JvmStatic
-        fun initialize(endpoint: String, user: String, password: String) {
-            client = Client(endpoint, user, password)
+        fun initialize(endpoint: String, user: String, password: String, taskAccessKey: String?) {
+            client = Client(endpoint, user, password, taskAccessKey)
         }
 
         @JvmStatic

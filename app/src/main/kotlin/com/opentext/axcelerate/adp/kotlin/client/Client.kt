@@ -10,7 +10,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
 import javax.net.ssl.SSLContext
 
-class Client(private val endpoint: String, private val user: String, private val password: String ) {
+class Client(private val endpoint: String, private val user: String, private val password: String, private val taskAccessKey: String?) {
     private var okHttpClient: OkHttpClient
 
     init {
@@ -25,10 +25,16 @@ class Client(private val endpoint: String, private val user: String, private val
     }
 
     fun run(jsonBody: String): String {
-        val req: Request = Request.Builder()
+        val builder = Request.Builder()
             .url(this.endpoint + "/adp/rest/api/task/executeAdpTask")
             .addHeader("Auth-Username", this.user)
             .addHeader("Auth-Password", this.password)
+
+        if (!this.taskAccessKey.isNullOrEmpty()) {
+            builder.addHeader("Task-Access-Key", this.taskAccessKey)
+        }
+
+        val req: Request = builder
             .put(jsonBody
                 .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
             )
