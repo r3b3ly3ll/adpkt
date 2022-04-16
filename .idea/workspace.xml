@@ -7,19 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="query postgresql db - update">
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DataModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DataSource.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/MergingMeta.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Relatable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/SingleMindServer.kt" afterDir="false" />
+    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="switch to interface instead of inheritance.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/EngineTaxonomy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/args/EngineTaxonomy.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Axcelerate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Axcelerate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Base.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DataModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DataModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DataSource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DocumentHold.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/DocumentHold.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaskRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaskRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesCmdRequestTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesCmdRequestTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequestTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequestTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/MergingMeta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/MergingMeta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Relatable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Actionable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/SingleMindServer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/SingleMindServer.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,22 @@
                 <item name="adpkt" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="shadow" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="adpkt" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="adpkt" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="adpkt" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -336,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649804789451</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="switch to interface instead of inheritance.">
+      <created>1650002033931</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1650002033931</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -363,6 +383,7 @@
     <MESSAGE value="TaskRequest as interface" />
     <MESSAGE value="query postgresql db" />
     <MESSAGE value="query postgresql db - update" />
-    <option name="LAST_COMMIT_MESSAGE" value="query postgresql db - update" />
+    <MESSAGE value="switch to interface instead of inheritance." />
+    <option name="LAST_COMMIT_MESSAGE" value="switch to interface instead of inheritance." />
   </component>
 </project>

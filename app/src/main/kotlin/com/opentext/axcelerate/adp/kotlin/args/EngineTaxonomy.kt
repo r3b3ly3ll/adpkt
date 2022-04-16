@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 class EngineTaxonomy(engineTaxonomy: String) {
     @JsonProperty("Taxonomy")
-    var  taxonomy: String? = null
+    var taxonomy: String? = null
     @JsonProperty("Negation")
     var negation: Boolean? = null
     @JsonProperty("Query")
@@ -17,7 +17,7 @@ class EngineTaxonomy(engineTaxonomy: String) {
 
     init {
         val items: List<String> = if (engineTaxonomy.contains(NE)) engineTaxonomy.split(NE) else engineTaxonomy.split(EQ)
-        val neg: Boolean = engineTaxonomy.contains(NE) ?: false
+        val neg: Boolean = engineTaxonomy.contains(NE)
         if (items.size == 2) {
             taxonomy = items[0]
             negation = neg

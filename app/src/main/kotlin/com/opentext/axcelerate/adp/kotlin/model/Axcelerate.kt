@@ -3,7 +3,7 @@ package com.opentext.axcelerate.adp.kotlin.model
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
 
-class Axcelerate(override val id: String): Relatable{
+class Axcelerate(override val id: String): Actionable {
     override fun getEcaApplications(): String {
         throw Exception("method: getEcaApplication not applicable")
     }

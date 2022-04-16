@@ -3,7 +3,7 @@ package com.opentext.axcelerate.adp.kotlin.model
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
 
-interface Relatable {
+interface Actionable {
     val id: String
 
     fun getEcaApplications(): String {
