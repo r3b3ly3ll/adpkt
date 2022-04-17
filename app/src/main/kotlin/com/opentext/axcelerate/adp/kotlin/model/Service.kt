@@ -60,7 +60,10 @@ class Service {
         @JvmStatic
         fun queryPostgresqlDB(req: QueryPostgresqlDBRequest): String {
             val root = execute(req)
-            return root.toPrettyString()
+            return jacksonObjectMapper().readTree(
+                root.get("adp_querydb_outputjson").asText()
+            )
+            .toPrettyString()
         }
     }
 }

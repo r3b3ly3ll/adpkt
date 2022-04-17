@@ -36,6 +36,8 @@ data class QueryPostgresqlDBConfiguration(
     val adpQpgdbDbUser: String? = null,
     @JsonProperty("adp_qpgdb_dbPassword")
     val adpQpgdbDbPassword: String? = null,
+    @JsonProperty("adp_qpgdb_outputJson")
+    val adpQpgdbOutputJson: String? = null,
     @JsonProperty("adp_qpgdb_dbConnectionPoolRootCertPath")
     val adpQpgdbDbConnectionPoolRootCertPath: String = "S:/Projects/ProcessControl/security/postgres/root.billing.crt",
     @JsonProperty("adp_qpgdb_dbConnectionPoolClientKeyPath")

@@ -8,6 +8,10 @@ import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.QueryPostgresqlDBConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.QueryPostgresqlDBRequest
 
+/*
+Usage:
+    java -jar .\app-all.jar -k adm1n -p * queryPostgresqlDB -c jdbc:postgresql://db-host:5432/db -q "select * from app.mrs_application_descriptions" -u postgres -p *"
+ */
 class QueryPostgresqlDBCmd: CliktCommand(name = "queryPostgresqlDB") {
     private val query: String by option("-q", "--query", help = "query")
         .required()
@@ -32,6 +36,7 @@ class QueryPostgresqlDBCmd: CliktCommand(name = "queryPostgresqlDB") {
             taskConfiguration = QueryPostgresqlDBConfiguration(
                 adpQpgdbDbUser = dbUser,
                 adpQpgdbDbPassword = dbPassword,
+                adpQpgdbOutputJson = "adp_querydb_outputjson",
                 adpQpgdbDbConnectionPoolRootCertPath = rootCertPath,
                 adpQpgdbDbConnectionPoolClientCertPath = clientCertPath,
                 adpQpgdbDbConnectionPoolClientKeyPath = clientKeyPath,
