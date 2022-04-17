@@ -8,9 +8,13 @@ import com.opentext.axcelerate.adp.kotlin.task.CreateCustodianConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.CreateCustodianRequest
 
 class CreateCustodianCmd: CliktCommand(name = "createCustodian"){
-    private val application: String? by option("--application", help="application identifier")
-    private val engine: String? by option("--engine", help="engine identifier")
-    private val update by option("--update", help="update existing custodians").flag(default = false)
+    private val application: String? by option("-a", "--application",
+        help="application identifier")
+    private val engine: String? by option("-e", "--engine",
+        help="engine identifier")
+    private val update by option("-d", "--update",
+        help="update existing custodians")
+        .flag(default = false)
 
     override fun run() {
         val req = CreateCustodianRequest(

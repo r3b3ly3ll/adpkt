@@ -8,12 +8,17 @@ import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
 
 class ListEntitiesCmd: CliktCommand(name = "listEntities") {
-    private val id: String? by option("--id", help="identifier")
-    private val relatedEntity: String? by option("--relatedEntity", help="related entity identifier")
-    private val status: String? by option("--status", help="process status")
-    private val whiteList: String by option("--whiteList", help="white list of output fields")
+    private val id: String? by option("-i", "--id",
+        help="identifier")
+    private val relatedEntity: String? by option("-r", "--relatedEntity",
+        help="related entity identifier")
+    private val status: String? by option("-s", "--status",
+        help="process status")
+    private val whiteList: String by option("-w", "--whiteList",
+        help="white list of output fields")
         .default("id,displayName,processStatus,hostName")
-    private val type: String? by option("--type", help="type of component. e.g., dataSource")
+    private val type: String? by option("-t", "--type",
+        help="type of component. e.g., dataSource")
 
     override fun run() {
         val req = ListEntitiesRequest(

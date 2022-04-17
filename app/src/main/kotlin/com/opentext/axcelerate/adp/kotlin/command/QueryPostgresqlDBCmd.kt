@@ -13,20 +13,26 @@ Usage:
     java -jar .\app-all.jar -k adm1n -p * queryPostgresqlDB -c jdbc:postgresql://db-host:5432/db -q "select * from app.mrs_application_descriptions" -u postgres -p *"
  */
 class QueryPostgresqlDBCmd: CliktCommand(name = "queryPostgresqlDB") {
-    private val query: String by option("-q", "--query", help = "query")
+    private val query: String by option("-q", "--query",
+        help = "query")
         .required()
     private val connectionURL: String by option("-c", "--connectionURL",
         help = "connectionURL e.g., jdbc:postgresql://localhost:5432/db")
         .required()
-    private val dbUser: String by option("-u", "--dbUser", help = "database user")
+    private val dbUser: String by option("-u", "--dbUser",
+        help = "database user")
         .default("postgres")
-    private val dbPassword: String by option("-p", "--dbPassword", help = "database user password")
+    private val dbPassword: String by option("-p", "--dbPassword",
+        help = "database user password")
         .default("")
-    private val rootCertPath: String by option("-r", "--rootCertPath", help = "root cert path")
+    private val rootCertPath: String by option("-r", "--rootCertPath",
+        help = "root cert path")
         .default("S:/Projects/ProcessControl/security/postgres/root.billing.crt")
-    private val clientKeyPath: String by option("-x", "--clientKeyPath", help = "client key path")
+    private val clientKeyPath: String by option("-x", "--clientKeyPath",
+        help = "client key path")
         .default("S:/Projects/ProcessControl/security/postgres/client.billing.key")
-    private val clientCertPath: String by option("-y", "--clientCertPath", help = "client cert path")
+    private val clientCertPath: String by option("-y", "--clientCertPath",
+        help = "client cert path")
         .default("S:/Projects/ProcessControl/security/postgres/client.billing.crt")
 
     override fun run() {
