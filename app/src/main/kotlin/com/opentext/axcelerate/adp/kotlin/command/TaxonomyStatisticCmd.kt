@@ -1,6 +1,7 @@
 package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.args.Util
 import com.opentext.axcelerate.adp.kotlin.model.Service
@@ -12,10 +13,12 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
         help = "engine taxonomies")
     private val outputTaxonomies : String? by option("-o", "--outputTaxonomies",
         help = "output taxonomies")
-    private val application: String? by option("-a", "--application",
+    private val application: String by option("-a", "--application",
         help = "application identifier")
-    private val engine: String? by option("-e", "--engine",
+        .default("")
+    private val engine: String by option("-e", "--engine",
         help = "engine identifier")
+        .default("")
     private val engineQuery: String? by option("-q", "--engineQuery",
         help = "engine query")
     private val engineUserName: String? by option("-u", "--engineUserName",

@@ -1,6 +1,7 @@
 package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.args.Util
 import com.opentext.axcelerate.adp.kotlin.model.Service
@@ -10,15 +11,18 @@ import com.opentext.axcelerate.adp.kotlin.task.QueryEngineRequest
 class QueryEngineCmd: CliktCommand(name = "queryEngine") {
     private val engineTaxonomies : String? by option("-t", "--engineTaxonomies",
         help = "engine taxonomies")
-    private val application: String? by option("-a","--application",
+    private val application: String by option("-a","--application",
         help = "application identifier")
-    private val engine: String? by option("-e","--engine",
+        .default("")
+    private val engine: String by option("-e","--engine",
         help = "engine identifier")
+        .default("")
     private val engineQuery: String? by option("-q", "--engineQuery",
         help = "engine query")
-    private val engineUserName: String? by option("-u", "--engineUserName",
+    private val engineUserName: String by option("-u", "--engineUserName",
         help = "engine user name")
-    private val engineUserPassword: String? by option("-q", "--engineUserPassword",
+        .default("")
+    private val engineUserPassword: String? by option("-p", "--engineUserPassword",
         help = "engine user password")
 
     override fun run() {

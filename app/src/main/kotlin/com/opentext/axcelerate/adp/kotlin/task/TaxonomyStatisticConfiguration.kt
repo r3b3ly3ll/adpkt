@@ -46,9 +46,9 @@ data class TaxonomyStatisticConfiguration (
     @JsonProperty("adp_taxonomyStatistic_outputTaxonomies")
     val adpTaxonomyStatisticOutputTaxonomies: ArrayList<OutputTaxonomy>? = null,
     @JsonProperty("adp_taxonomyStatistic_applicationIdentifier")
-    val adpTaxonomyStatisticApplicationIdentifier: String? = null,
+    val adpTaxonomyStatisticApplicationIdentifier: String,
     @JsonProperty("adp_taxonomyStatistic_engineName")
-    val adpTaxonomyStatisticEngineName: String? = null,
+    val adpTaxonomyStatisticEngineName: String,
     @JsonProperty("adp_taxonomyStatistic_engineQuery")
     val adpTaxonomyStatisticEngineQuery: String? = null,
     @JsonProperty("adp_taxonomyStatistic_engineUserName")
