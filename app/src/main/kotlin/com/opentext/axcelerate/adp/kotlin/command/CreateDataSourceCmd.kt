@@ -1,6 +1,7 @@
 package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.CreateDataSourceConfiguration
@@ -17,7 +18,7 @@ class CreateDataSourceCmd: CliktCommand(name = "createDataSource"){
         help="host identifier")
     private val template: String? by option("-t", "--template",
         help="datasource template")
-
+    private val async by option("--async").flag("--sync", default = false)
 
     override fun run() {
         val req = CreateDataSourceRequest(
@@ -32,6 +33,6 @@ class CreateDataSourceCmd: CliktCommand(name = "createDataSource"){
             )
         )
 
-        println(Service.createDataSource(req))
+        println(Service.createDataSource(req, async))
     }
 }

@@ -2,6 +2,7 @@ package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.default
+import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.opentext.axcelerate.adp.kotlin.model.Service
@@ -34,6 +35,7 @@ class QueryPostgresqlDBCmd: CliktCommand(name = "queryPostgresqlDB") {
     private val clientCertPath: String by option("-y", "--clientCertPath",
         help = "client cert path")
         .default("S:/Projects/ProcessControl/security/postgres/client.billing.crt")
+    private val async by option("--async").flag("--sync", default = false)
 
     override fun run() {
         val req = QueryPostgresqlDBRequest(
@@ -50,6 +52,6 @@ class QueryPostgresqlDBCmd: CliktCommand(name = "queryPostgresqlDB") {
                 adpQpgdbDbConnectionUrl = connectionURL
             )
         )
-        println(Service.queryPostgresqlDB(req))
+        println(Service.queryPostgresqlDB(req, async))
     }
 }

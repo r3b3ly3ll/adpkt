@@ -15,6 +15,7 @@ class CreateCustodianCmd: CliktCommand(name = "createCustodian"){
     private val update by option("-d", "--update",
         help="update existing custodians")
         .flag(default = false)
+    private val async by option("--async").flag("--sync", default = false )
 
     override fun run() {
         val req = CreateCustodianRequest(
@@ -27,6 +28,6 @@ class CreateCustodianCmd: CliktCommand(name = "createCustodian"){
             )
         )
 
-        println(Service.createCustodian(req))
+        println(Service.createCustodian(req, async))
     }
 }

@@ -2,6 +2,7 @@ package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.default
+import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
@@ -19,6 +20,7 @@ class ListEntitiesCmd: CliktCommand(name = "listEntities") {
         .default("id,displayName,processStatus,hostName")
     private val type: String? by option("-t", "--type",
         help="type of component. e.g., dataSource")
+    private val async by option("--async").flag("--sync", default = false)
 
     override fun run() {
         val req = ListEntitiesRequest(
@@ -33,6 +35,6 @@ class ListEntitiesCmd: CliktCommand(name = "listEntities") {
             )
         )
 
-        println(Service.listEntities(req))
+        println(Service.listEntities(req, async))
     }
 }

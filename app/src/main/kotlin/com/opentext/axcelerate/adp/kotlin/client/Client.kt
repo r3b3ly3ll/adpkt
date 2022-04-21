@@ -24,9 +24,12 @@ class Client(private val endpoint: String, private val user: String, private val
             .build()
     }
 
-    fun run(jsonBody: String): String {
+    fun run(jsonBody: String, async: Boolean): TaskResponse {
+        var execPath = "/adp/rest/api/task/executeAdpTask"
+        if ( async ) { execPath += "Async" }
+
         val builder = Request.Builder()
-            .url(this.endpoint + "/adp/rest/api/task/executeAdpTask")
+            .url(this.endpoint + execPath)
             .addHeader("Auth-Username", this.user)
             .addHeader("Auth-Password", this.password)
 
@@ -40,14 +43,10 @@ class Client(private val endpoint: String, private val user: String, private val
             )
             .build()
 
-        this.okHttpClient.newCall(req).execute().use  { resp ->
-            if (!resp.isSuccessful)  throw IOException("Unexpected code $resp")
+        this.okHttpClient.newCall(req).execute().use { resp ->
+            if (!resp.isSuccessful) throw IOException("Unexpected code $resp")
 
-            val mapper = jacksonObjectMapper()
-            val taskResp =  mapper.readValue<TaskResponse>(resp.body!!.string())
-            if (taskResp.executionStatus != "success") throw Exception("ADP Task ${taskResp.taskDisplayName} failed")
-
-            return taskResp.executionMetaData.toString()
+            return jacksonObjectMapper().readValue(resp.body!!.string())
         }
     }
 }

@@ -2,6 +2,7 @@ package com.opentext.axcelerate.adp.kotlin.command
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.default
+import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.args.Util
 import com.opentext.axcelerate.adp.kotlin.model.Service
@@ -25,6 +26,7 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
         help = "engine user name")
     private val engineUserPassword: String? by option("-p", "--engineUserPassword",
         help = "engine user password")
+    private val async by option("--async").flag("--sync", default = false)
 
     override fun run() {
         val arrayOfEngineTaxonomies = Util.stringToEngineTaxonomies(engineTaxonomies)
@@ -44,6 +46,6 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
             )
         )
 
-        println(Service.taxonomyStatistic(req))
+        println(Service.taxonomyStatistic(req, async))
     }
 }
