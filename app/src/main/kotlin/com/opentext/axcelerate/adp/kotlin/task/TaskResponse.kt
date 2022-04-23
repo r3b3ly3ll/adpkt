@@ -18,5 +18,6 @@ data class TaskResponse (
     val progressCurrent: Int?,
     val progressPercentage: Float?,
     val taskDisplayName: String,
-    val executionMetaData: JsonNode?
+    val executionMetaData: JsonNode?,
+    val errorMessage: String?
 )

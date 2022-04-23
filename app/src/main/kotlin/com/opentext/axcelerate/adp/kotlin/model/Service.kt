@@ -26,7 +26,7 @@ class Service {
             val resp = client.run(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
-            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName} failed")
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return jacksonObjectMapper().readTree(
                     resp.executionMetaData!!.get("adp_entities_json_output").asText()
                 )
@@ -38,7 +38,7 @@ class Service {
             val resp = client.run(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
-            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName} failed")
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return jacksonObjectMapper().readTree(
                     resp.executionMetaData!!
                         .get("adp_taxonomy_statistics_json_output")
@@ -52,7 +52,7 @@ class Service {
             val resp = client.run(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
-            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName} failed")
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()
         }
 
@@ -61,7 +61,7 @@ class Service {
             val resp = client.run(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
-            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName} failed")
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()
         }
 
@@ -70,7 +70,7 @@ class Service {
             val resp = client.run(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
-            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName} failed")
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()
         }
 
@@ -79,13 +79,22 @@ class Service {
             val resp = client.run(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
-            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName} failed")
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return jacksonObjectMapper().readTree(
                 resp.executionMetaData!!
                     .get("adp_querydb_outputjson")
                     .asText()
                 )
                 .toPrettyString()
+        }
+
+        @JvmStatic
+        fun startApplication(req: StartApplicationRequest, async: Boolean = false): String {
+            val resp = client.run(req.toJson(), async)
+            if (async) { return asyncOutput(resp) }
+
+            if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
+            return resp.executionMetaData!!.toPrettyString()
         }
     }
 }

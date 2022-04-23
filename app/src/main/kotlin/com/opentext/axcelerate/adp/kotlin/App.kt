@@ -13,6 +13,7 @@ fun main(args: Array<String>) = RootCmd()
         ListEntitiesCmd(),
         QueryEngineCmd(),
         QueryPostgresqlDBCmd(),
+        StartApplicationCmd(),
         TaxonomyStatisticCmd()
     )
     .main(args)
