@@ -24,7 +24,7 @@ class Client(private val endpoint: String, private val user: String, private val
             .build()
     }
 
-    fun run(jsonBody: String, async: Boolean): TaskResponse {
+    fun executeTask(jsonBody: String, async: Boolean): TaskResponse {
         var execPath = "/adp/rest/api/task/executeAdpTask"
         if ( async ) { execPath += "Async" }
 

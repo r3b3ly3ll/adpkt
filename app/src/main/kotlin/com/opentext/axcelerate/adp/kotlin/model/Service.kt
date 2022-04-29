@@ -23,7 +23,7 @@ class Service {
 
         @JvmStatic
         fun listEntities(req: ListEntitiesRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
@@ -35,7 +35,7 @@ class Service {
 
         @JvmStatic
         fun taxonomyStatistic(req: TaxonomyStatisticRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
@@ -49,7 +49,7 @@ class Service {
 
         @JvmStatic
         fun queryEngine(req: QueryEngineRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
@@ -58,7 +58,7 @@ class Service {
 
         @JvmStatic
         fun createCustodian(req: CreateCustodianRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
@@ -67,7 +67,7 @@ class Service {
 
         @JvmStatic
         fun createDataSource(req: CreateDataSourceRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
@@ -76,7 +76,7 @@ class Service {
 
         @JvmStatic
         fun queryPostgresqlDB(req: QueryPostgresqlDBRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
@@ -90,7 +90,7 @@ class Service {
 
         @JvmStatic
         fun startApplication(req: StartApplicationRequest, async: Boolean = false): String {
-            val resp = client.run(req.toJson(), async)
+            val resp = client.executeTask(req.toJson(), async)
             if (async) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
