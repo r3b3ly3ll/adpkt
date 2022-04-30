@@ -27,7 +27,7 @@ class Client(private val endpoint: String, private val user: String, private val
 
     fun executeTask(taskReq: TaskRequest): TaskResponse {
         var execPath = "/adp/rest/api/task/executeAdpTask"
-        if ( taskReq.isAsync() ) { execPath += "Async" }
+        if ( taskReq.async() ) { execPath += "Async" }
 
         val builder = Request.Builder()
             .url(this.endpoint + execPath)

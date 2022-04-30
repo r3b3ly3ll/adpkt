@@ -8,7 +8,7 @@ enum class ExecutionMode {
 
 interface TaskRequest {
     var executionMode: ExecutionMode
-    fun isAsync(): Boolean {
+    fun async(): Boolean {
         return executionMode == ExecutionMode.ASYNCHRONOUS
     }
     fun toJson(): String {

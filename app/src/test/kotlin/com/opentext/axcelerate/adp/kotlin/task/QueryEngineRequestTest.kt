@@ -7,11 +7,12 @@ import kotlin.test.assertEquals
 
 class QueryEngineRequestTest {
     @Test
-    fun testQueryEngineRequest() {
+    fun testQueryEngineRequestSync() {
         val taxonomies: ArrayList<EngineTaxonomy> = ArrayList(0)
 
         // reset displayName and description
         val req = QueryEngineRequest(
+            executionMode = ExecutionMode.SYNCHRONOUS,
             taskDisplayName = "Query Engine",
             taskDescription = "Query Engine",
             taskConfiguration = QueryEngineConfiguration(
@@ -25,11 +26,12 @@ class QueryEngineRequestTest {
     }
 
     @Test
-    fun testQueryEngineRequestWithEngineTaxonomies() {
+    fun testQueryEngineRequestWithEngineTaxonomiesAsync() {
         val arrayOfEngineTaxonomies = Util.stringToEngineTaxonomies("rm_custodian!=John Doe,rm_copy=Native")
 
         // reset displayName and description
         val req = QueryEngineRequest(
+            executionMode = ExecutionMode.ASYNCHRONOUS,
             taskDisplayName = "Query Engine",
             taskDescription = "Query Engine",
             taskConfiguration = QueryEngineConfiguration(

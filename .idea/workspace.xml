@@ -7,27 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="rename run to executeTask">
+    <list default="true" id="b2989f88-e752-4489-956c-26b57ee888d0" name="Changes" comment="refactor executionMode field">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/client/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/client/Client.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/CreateCustodianCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/CreateCustodianCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/CreateDataSourceCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/CreateDataSourceCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/ListEntitiesCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/ListEntitiesCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryEngineCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryEngineCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryPostgresqlDBCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/QueryPostgresqlDBCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/StartApplicationCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/StartApplicationCmd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/TaxonomyStatisticCmd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/command/TaxonomyStatisticCmd.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Service.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/model/Service.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/CreateCustodianRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/CreateCustodianRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/CreateDataSourceRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/CreateDataSourceRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryPostgresqlDBRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryPostgresqlDBRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/StartApplicationRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/StartApplicationRequest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaskRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaskRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaxonomyStatisticRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/opentext/axcelerate/adp/kotlin/task/TaxonomyStatisticRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesCmdRequestTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/ListEntitiesCmdRequestTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequestTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/com/opentext/axcelerate/adp/kotlin/task/QueryEngineRequestTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,10 +236,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.adpkt [shadowJar]" />
+        <item itemvalue="Gradle.QueryEngineRequestTest" />
         <item itemvalue="Gradle.QueryEngineRequestTest.testQueryEngineRequest" />
         <item itemvalue="Gradle.ListEntitiesCmdRequestTest.testListEntitiesRequest" />
         <item itemvalue="Gradle.ListEntitiesCmdRequestTest" />
-        <item itemvalue="Gradle.QueryEngineRequestTest" />
       </list>
     </recent_temporary>
   </component>
@@ -407,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651217446267</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="refactor executionMode field">
+      <created>1651300768516</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1651300768516</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -443,6 +435,7 @@
     <MESSAGE value="enables async mode" />
     <MESSAGE value="start application command" />
     <MESSAGE value="rename run to executeTask" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename run to executeTask" />
+    <MESSAGE value="refactor executionMode field" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor executionMode field" />
   </component>
 </project>
