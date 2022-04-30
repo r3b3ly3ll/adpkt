@@ -6,6 +6,7 @@ import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.args.Util
 import com.opentext.axcelerate.adp.kotlin.model.Service
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 import com.opentext.axcelerate.adp.kotlin.task.QueryEngineConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.QueryEngineRequest
 
@@ -43,6 +44,9 @@ class QueryEngineCmd: CliktCommand(name = "queryEngine") {
             )
         )
 
-        println(Service.queryEngine(req, async))
+        if (async) {
+            req.executionMode = ExecutionMode.ASYNCHRONOUS
+        }
+        println(Service.queryEngine(req))
     }
 }

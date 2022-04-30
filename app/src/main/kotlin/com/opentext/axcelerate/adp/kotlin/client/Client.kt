@@ -2,6 +2,7 @@ package com.opentext.axcelerate.adp.kotlin.client
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import com.opentext.axcelerate.adp.kotlin.task.TaskRequest
 import com.opentext.axcelerate.adp.kotlin.task.TaskResponse
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -24,9 +25,9 @@ class Client(private val endpoint: String, private val user: String, private val
             .build()
     }
 
-    fun executeTask(jsonBody: String, async: Boolean): TaskResponse {
+    fun executeTask(taskReq: TaskRequest): TaskResponse {
         var execPath = "/adp/rest/api/task/executeAdpTask"
-        if ( async ) { execPath += "Async" }
+        if ( taskReq.isAsync() ) { execPath += "Async" }
 
         val builder = Request.Builder()
             .url(this.endpoint + execPath)
@@ -38,7 +39,8 @@ class Client(private val endpoint: String, private val user: String, private val
         }
 
         val req: Request = builder
-            .put(jsonBody
+            .put(taskReq
+                .toJson()
                 .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
             )
             .build()

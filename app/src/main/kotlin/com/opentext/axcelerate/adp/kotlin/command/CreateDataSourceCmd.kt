@@ -6,6 +6,7 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.CreateDataSourceConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.CreateDataSourceRequest
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 
 class CreateDataSourceCmd: CliktCommand(name = "createDataSource"){
     private val dataSource: String? by option("-d", "--datasource",
@@ -33,6 +34,10 @@ class CreateDataSourceCmd: CliktCommand(name = "createDataSource"){
             )
         )
 
-        println(Service.createDataSource(req, async))
+        if (async) {
+            req.executionMode = ExecutionMode.ASYNCHRONOUS
+        }
+
+        println(Service.createDataSource(req))
     }
 }

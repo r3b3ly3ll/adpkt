@@ -22,9 +22,9 @@ class Service {
         }
 
         @JvmStatic
-        fun listEntities(req: ListEntitiesRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun listEntities(req: ListEntitiesRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return jacksonObjectMapper().readTree(
@@ -34,9 +34,9 @@ class Service {
         }
 
         @JvmStatic
-        fun taxonomyStatistic(req: TaxonomyStatisticRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun taxonomyStatistic(req: TaxonomyStatisticRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return jacksonObjectMapper().readTree(
@@ -48,36 +48,36 @@ class Service {
         }
 
         @JvmStatic
-        fun queryEngine(req: QueryEngineRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun queryEngine(req: QueryEngineRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()
         }
 
         @JvmStatic
-        fun createCustodian(req: CreateCustodianRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun createCustodian(req: CreateCustodianRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()
         }
 
         @JvmStatic
-        fun createDataSource(req: CreateDataSourceRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun createDataSource(req: CreateDataSourceRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()
         }
 
         @JvmStatic
-        fun queryPostgresqlDB(req: QueryPostgresqlDBRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun queryPostgresqlDB(req: QueryPostgresqlDBRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return jacksonObjectMapper().readTree(
@@ -89,9 +89,9 @@ class Service {
         }
 
         @JvmStatic
-        fun startApplication(req: StartApplicationRequest, async: Boolean = false): String {
-            val resp = client.executeTask(req.toJson(), async)
-            if (async) { return asyncOutput(resp) }
+        fun startApplication(req: StartApplicationRequest): String {
+            val resp = client.executeTask(req)
+            if ( req.isAsync() ) { return asyncOutput(resp) }
 
             if (resp.executionStatus != "success") throw Exception("ADP Task ${resp.taskDisplayName}: ${resp.errorMessage}")
             return resp.executionMetaData!!.toPrettyString()

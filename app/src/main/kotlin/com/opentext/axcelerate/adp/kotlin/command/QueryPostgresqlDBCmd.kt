@@ -6,6 +6,7 @@ import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.opentext.axcelerate.adp.kotlin.model.Service
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 import com.opentext.axcelerate.adp.kotlin.task.QueryPostgresqlDBConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.QueryPostgresqlDBRequest
 
@@ -52,6 +53,10 @@ class QueryPostgresqlDBCmd: CliktCommand(name = "queryPostgresqlDB") {
                 adpQpgdbDbConnectionUrl = connectionURL
             )
         )
-        println(Service.queryPostgresqlDB(req, async))
+
+        if (async) {
+            req.executionMode = ExecutionMode.ASYNCHRONOUS
+        }
+        println(Service.queryPostgresqlDB(req))
     }
 }

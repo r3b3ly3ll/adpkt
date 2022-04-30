@@ -6,6 +6,7 @@ import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.args.Util
 import com.opentext.axcelerate.adp.kotlin.model.Service
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.TaxonomyStatisticRequest
 
@@ -46,6 +47,9 @@ class TaxonomyStatisticCmd: CliktCommand(name = "taxonomyStatistic") {
             )
         )
 
-        println(Service.taxonomyStatistic(req, async))
+        if (async) {
+            req.executionMode = ExecutionMode.ASYNCHRONOUS
+        }
+        println(Service.taxonomyStatistic(req))
     }
 }

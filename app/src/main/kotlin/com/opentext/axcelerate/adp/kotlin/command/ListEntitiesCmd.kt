@@ -5,6 +5,7 @@ import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.model.Service
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.ListEntitiesRequest
 
@@ -35,6 +36,10 @@ class ListEntitiesCmd: CliktCommand(name = "listEntities") {
             )
         )
 
-        println(Service.listEntities(req, async))
+        if (async) {
+            req.executionMode = ExecutionMode.ASYNCHRONOUS
+        }
+
+        println(Service.listEntities(req))
     }
 }

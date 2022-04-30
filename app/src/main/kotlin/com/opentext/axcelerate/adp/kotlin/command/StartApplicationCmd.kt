@@ -6,6 +6,7 @@ import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.opentext.axcelerate.adp.kotlin.model.Service
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 import com.opentext.axcelerate.adp.kotlin.task.StartApplicationConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.StartApplicationRequest
 
@@ -28,6 +29,9 @@ class StartApplicationCmd : CliktCommand(name = "startApplication") {
                 )
             )
 
-            println(Service.startApplication(req, async))
+            if (async) {
+                req.executionMode = ExecutionMode.ASYNCHRONOUS
+            }
+            println(Service.startApplication(req))
         }
 }

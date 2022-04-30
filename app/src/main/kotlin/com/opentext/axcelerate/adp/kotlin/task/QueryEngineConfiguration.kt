@@ -51,9 +51,9 @@ data class QueryEngineConfiguration (
     @JsonProperty("adp_queryEngine_engineTaxonomies")
     val adpQueryEngineEngineTaxonomies: ArrayList<EngineTaxonomy>? = null,
     @JsonProperty("adp_queryEngine_applicationIdentifier")
-    val adpQueryEngineApplicationIdentifier: String,
+    val adpQueryEngineApplicationIdentifier: String? = null,
     @JsonProperty("adp_queryEngine_engineName")
-    val adpQueryEngineEngineName: String,
+    val adpQueryEngineEngineName: String? = null,
     @JsonProperty("adp_queryEngine_engineQuery")
     val adpQueryEngineEngineQuery: String? = null,
     @JsonProperty("adp_queryEngine_engineUserName")

@@ -6,6 +6,7 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.opentext.axcelerate.adp.kotlin.model.Service
 import com.opentext.axcelerate.adp.kotlin.task.CreateCustodianConfiguration
 import com.opentext.axcelerate.adp.kotlin.task.CreateCustodianRequest
+import com.opentext.axcelerate.adp.kotlin.task.ExecutionMode
 
 class CreateCustodianCmd: CliktCommand(name = "createCustodian"){
     private val application: String? by option("-a", "--application",
@@ -28,6 +29,10 @@ class CreateCustodianCmd: CliktCommand(name = "createCustodian"){
             )
         )
 
-        println(Service.createCustodian(req, async))
+        if (async) {
+           req.executionMode = ExecutionMode.ASYNCHRONOUS
+        }
+
+        println(Service.createCustodian(req))
     }
 }

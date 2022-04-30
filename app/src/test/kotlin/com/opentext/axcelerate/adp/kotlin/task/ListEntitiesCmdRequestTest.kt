@@ -17,7 +17,7 @@ class ListEntitiesCmdRequestTest {
             )
         )
 
-        val expected = """{"taskType":"List Entities","taskDescription":"List Datasource","taskDisplayName":"List Datasource","taskConfiguration":{"adp_listEntities_whiteList":"id,displayName,processStatus,hostName","adp_listEntities_relatedEntity":"singleMindServer.G0001","adp_listEntities_type":"dataSource"}}"""
+        val expected = """{"taskType":"List Entities","taskDescription":"List Datasource","taskDisplayName":"List Datasource","taskConfiguration":{"adp_listEntities_whiteList":"id,displayName,processStatus,hostName","adp_listEntities_relatedEntity":"singleMindServer.G0001","adp_listEntities_type":"dataSource","adp_loggingEnabled":false}}"""
         assertEquals(expected, req.toJson())
     }
 
